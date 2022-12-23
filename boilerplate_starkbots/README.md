@@ -67,9 +67,9 @@
 
 ## Support
 
-Channel :- [@GerBots](https://t.me/GerBots)
+Channel :- [@NNGerBots](https://t.me/NNGerBots)
 
-Group Chat :- [@GerBotsChat](https://t.me/GerBotsChat)
+Group Chat :- [@NNGerBotsChat](https://t.me/NNGerBotsChat)
 
 ## :)
 

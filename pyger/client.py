@@ -92,7 +92,7 @@ class Ger(Client, Mechanism):
                 except ConnectionError:
                     pass
             self.stop()
-            logger.info("Bot has stopped working. For issues, visit <https://t.me/GerBotsChat>")
+            logger.info("Bot has stopped working. For issues, visit <https://t.me/NNGerBotsChat>")
 
     def run(self):
         """Alias of `Ger.activate()`"""

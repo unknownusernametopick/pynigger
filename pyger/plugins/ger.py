@@ -9,7 +9,7 @@ Welcome to {bot}
 I can {1}
 Use below buttons to learn more.
 
-By @GerBots
+By @NNGerBots
 """
 
 HELP = """
@@ -37,10 +37,10 @@ HOME_BUTTON = [
 ]
 
 MAIN_BUTTONS = [
-    [InlineKeyboardButton("✨ Bot Status and More Bots ✨", url="https://t.me/GerBots/7")],
+    [InlineKeyboardButton("✨ Bot Status and More Bots ✨", url="https://t.me/NNGerBots/7")],
     [
         InlineKeyboardButton("How to Use ❔", callback_data="help"),
         InlineKeyboardButton("🎪 About 🎪", callback_data="about")
     ],
-    [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/GerBots")],
+    [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/NNGerBots")],
 ]

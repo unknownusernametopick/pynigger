@@ -55,8 +55,8 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules'
     ],
     project_urls={
-        "Support": "https://t.me/GerBotsChat",
-        "Community": "https://t.me/GerBots",
+        "Support": "https://t.me/NNGerBotsChat",
+        "Community": "https://t.me/NNGerBots",
         "Updates": "https://t.me/pyger",
         "Documentation": "https://pyger.codes/",
     },

@@ -55,9 +55,9 @@ Ger().activate()
 
 Pyger Telegram Updates - **[pyger](https://t.me/pyger)**
 
-Telegram Channel - **[GerBots](https://t.me/GerBots)**
+Telegram Channel - **[GerBots](https://t.me/NNGerBots)**
 
-Telegram Chat - **[GerBotsChat](https://t.me/GerBotsChat)**
+Telegram Chat - **[GerBotsChat](https://t.me/NNGerBotsChat)**
 
 ## Copyright and License
 
