@@ -4,7 +4,7 @@ This is a list of all the known bots created using pyger.
 
 !!! important
 
-    If you created your own open source bot using pyger, feel free to make a pull request or [open an issue](https://github.com/unknownusernametopick/pyger/issues/new) on GitHub or you can also contact in [Telegram Support Chat](https://t.me/NNGerBotsChat).
+    If you created your own open source bot using pyger, feel free to make a pull request or [open an issue](https://github.com/unknownusernametopick/pyger/issues/new) on GitHub or you can also contact in [Telegram Support Chat](https://t.me/NiGGeR_BotsChat).
 
 
 ## Open Source
@@ -15,10 +15,10 @@ This is a list of all the known bots created using pyger.
 
 ## Others
 
-- [Restricted Content Bot](https://t.me/NNGerBots/150) - Bot to save restricted content from public chats.
+- [Restricted Content Bot](https://t.me/NiGGeR_Bots/150) - Bot to save restricted content from public chats.
 
-- [Link to Media Bot](https://t.me/NNGerBots/193) - Bot to download media from thousands of different links including YouTube, Facebook, Instagram, Spotify, Deezer and so on.
+- [Link to Media Bot](https://t.me/NiGGeR_Bots/193) - Bot to download media from thousands of different links including YouTube, Facebook, Instagram, Spotify, Deezer and so on.
 
-- [Database Migration Bot](https://t.me/NNGerBots/194) - Temporary bot to fix a usual error.
+- [Database Migration Bot](https://t.me/NiGGeR_Bots/194) - Temporary bot to fix a usual error.
 
-- [Web Screenshot Bot](https://t.me/NNGerBots/197) - Bot to get screenshot of webpages in different resolutions/viewports.
+- [Web Screenshot Bot](https://t.me/NiGGeR_Bots/197) - Bot to get screenshot of webpages in different resolutions/viewports.

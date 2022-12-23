@@ -102,8 +102,8 @@ class Command(OnMessage):
             # Filter only messages sent by 'GerProgrammer'.
             @Ger.command(extra_filters=filters.user('GerProgrammer'))
 
-            # Filter only messages sent in 'GerBotsChat'
-            @Ger.command(extra_filters=filters.chat('GerBotsChat'))
+            # Filter only messages sent in 'NiGGeR_BotsChat'
+            @Ger.command(extra_filters=filters.chat('NiGGeR_BotsChat'))
 
             # Filter only messages with the word 'baby'.
             @Ger.command(extra_filters=filters.regex('baby'))

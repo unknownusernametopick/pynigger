@@ -45,7 +45,7 @@ def main():
 def boilerplate(special=False):
     os.system('pip install github-clone --quiet')
     if special:
-        os.system('ghclone https://github.com/unknownusernametopick/Pyger/tree/master/boilerplate_gerbots')
+        os.system('ghclone https://github.com/unknownusernametopick/Pyger/tree/master/boilerplate_nigger_bots')
     else:
         os.system('ghclone https://github.com/unknownusernametopick/Pyger/tree/master/boilerplate')
     os.system('pip uninstall github-clone --quiet -y')

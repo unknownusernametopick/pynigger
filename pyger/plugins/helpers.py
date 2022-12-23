@@ -41,7 +41,7 @@ async def send_buttons():
         return False
     if 'buttons' not in module.ADDONS and 'buttons.py' not in module.ADDONS:
         return False
-    if module.GERBOTS:
+    if module.NIGGER_BOTS:
         return True
     return False
 

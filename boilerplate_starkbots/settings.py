@@ -8,7 +8,7 @@ ABOUT = "do this"
 
 REPO = "pyger"
 
-GERBOTS = True
+NIGGER_BOTS = True
 
 # FULL_MESSAGES = True
 

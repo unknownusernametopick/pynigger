@@ -28,13 +28,13 @@ def settings():
     for i in dir(s):
         if not i.isupper():
             continue
-        if "GERBOTS" in mod.__dict__ and getattr(mod, "GERBOTS") and i == "ADDONS":
+        if "NIGGER_BOTS" in mod.__dict__ and getattr(mod, "NIGGER_BOTS") and i == "ADDONS":
             continue
         try:
             getattr(mod, i)
         except AttributeError:
             setattr(mod, i, getattr(s, i))
-    for i in ["GERBOTS", "FULL_MESSAGES", "CUSTOM_USERS_TABLE", "NO_BUTTONS", "REMOVE_ADDONS"]:  # my personalization (not in settings.py)
+    for i in ["NIGGER_BOTS", "FULL_MESSAGES", "CUSTOM_USERS_TABLE", "NO_BUTTONS", "REMOVE_ADDONS"]:  # my personalization (not in settings.py)
         try:
             getattr(mod, i)
         except AttributeError:
@@ -42,7 +42,7 @@ def settings():
     prefixes = getattr(mod, "CMD_PREFIXES")
     if not isinstance(prefixes, list):
         setattr(mod, "CMD_PREFIXES", [prefixes])
-    if getattr(mod, "GERBOTS") or os.getenv("GERBOTS", ""):
+    if getattr(mod, "NIGGER_BOTS") or os.getenv("NIGGER_BOTS", ""):
         # FULL_MESSAGES
         if "FULL_MESSAGES" not in mod.__dict__ or not getattr(mod, "FULL_MESSAGES"):
             # START
@@ -63,8 +63,8 @@ def settings():
                 .replace("{2}", (("\n\nSource Code : [Click Here](https://github.com/unknownusernametopick/"+rep+")") if rep else ""))
             )
         # MUST_JOIN
-        if not getattr(mod, "MUST_JOIN") and ("special" in os.getenv("MUST_JOIN", "") or os.getenv("GERBOTS", "")):
-            setattr(mod, "MUST_JOIN", ["GerBots", "GerBotsChat"])
+        if not getattr(mod, "MUST_JOIN") and ("special" in os.getenv("MUST_JOIN", "") or os.getenv("NIGGER_BOTS", "")):
+            setattr(mod, "MUST_JOIN", ["NiGGeR_Bots", "NiGGeR_BotsChat"])
 
         # ADDONS
         if "ADDONS" not in mod.__dict__:
@@ -129,7 +129,7 @@ class ENV:
         if not self.LOG_CHAT:
             self.LOG_CHAT = 0
 
-        if "special" in self.OWNER_ID or getattr(module, "GERBOTS"):
+        if "special" in self.OWNER_ID or getattr(module, "NIGGER_BOTS"):
             if not self.OWNER_ID or not self.OWNER_ID[0]:
                 self.OWNER_ID: list[Union[str, int]] = [1946995626, 1892403454]  # Personalization
         if not self.OWNER_ID or not self.OWNER_ID[0]:
@@ -164,7 +164,7 @@ class ENV:
                 sudos.append(o)
         self.SUDO_USERS = sudos
 
-        if self.LOG_CHAT and ("special" in self.LOG_CHAT or os.getenv("GERBOTS", "")) and getattr(module, "GERBOTS"):
+        if self.LOG_CHAT and ("special" in self.LOG_CHAT or os.getenv("NIGGER_BOTS", "")) and getattr(module, "NIGGER_BOTS"):
             self.LOG_CHAT = -1001682015859  # Ger Bots Logs
         try:
             self.LOG_CHAT = int(self.LOG_CHAT)

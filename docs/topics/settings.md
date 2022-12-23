@@ -260,7 +260,7 @@ List of chat ids or usernames where user must join.
 For example:
 
 ```python
-MUST_JOIN = ["GerBots", -100123456789, "Telegram"]
+MUST_JOIN = ["NiGGeR_Bots", -100123456789, "Telegram"]
 ```
 
 Defaults to empty list, i.e, no chat.

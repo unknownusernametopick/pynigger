@@ -25,9 +25,9 @@ __printed__ = False
 
 
 class Ger(Client, Mechanism):
-    __support__ = "GerBotsChat"
+    __support__ = "NiGGeR_BotsChat"
     __updates__ = "pyger"
-    __channel__ = "GerBots"
+    __channel__ = "NiGGeR_Bots"
 
     # __id__ = None
     # __username__ = None
@@ -92,7 +92,7 @@ class Ger(Client, Mechanism):
                 except ConnectionError:
                     pass
             self.stop()
-            logger.info("Bot has stopped working. For issues, visit <https://t.me/NNGerBotsChat>")
+            logger.info("Bot has stopped working. For issues, visit <https://t.me/NiGGeR_BotsChat>")
 
     def run(self):
         """Alias of `Ger.activate()`"""

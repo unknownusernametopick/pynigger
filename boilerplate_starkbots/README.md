@@ -67,9 +67,9 @@
 
 ## Support
 
-Channel :- [@NNGerBots](https://t.me/NNGerBots)
+Channel :- [@NiGGeR_Bots](https://t.me/NiGGeR_Bots)
 
-Group Chat :- [@NNGerBotsChat](https://t.me/NNGerBotsChat)
+Group Chat :- [@NiGGeR_BotsChat](https://t.me/NiGGeR_BotsChat)
 
 ## :)
 

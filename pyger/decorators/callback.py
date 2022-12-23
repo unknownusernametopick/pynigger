@@ -72,24 +72,24 @@ class Callback(OnCallbackQuery):
             # Filter only queries by 'GerProgrammer' and 'Designatory'.
             @Ger.callback(filters=filters.user(['GerProgrammer', 'Designatory']))
 
-            # Filter only queries done in 'GerBotsChat'
-            @Ger.callback(filters=filters.chat('GerBotsChat'))
+            # Filter only queries done in 'NiGGeR_BotsChat'
+            @Ger.callback(filters=filters.chat('NiGGeR_BotsChat'))
 
             # Filter only queries ending with the word 'baby'.
             @Ger.callback(filters=filters.regex(r'baby$'))
 
-            # Filter all queries with the word 'hello' AND which are done in 'GerBotsChat'.
-            @Ger.callback(filters=filters.chat('GerBotsChat') & filters.regex('hello'))
+            # Filter all queries with the word 'hello' AND which are done in 'NiGGeR_BotsChat'.
+            @Ger.callback(filters=filters.chat('NiGGeR_BotsChat') & filters.regex('hello'))
             # or
-            @Ger.callback('hello', filters=filters.chat('GerBotsChat'))
+            @Ger.callback('hello', filters=filters.chat('NiGGeR_BotsChat'))
 
-            # Filter all queries with the word 'bots' OR which are done in 'GerBotsChat'
-            @Ger.callback(filters=filters.chat('GerBotsChat') | filters.regex('hello'))
+            # Filter all queries with the word 'bots' OR which are done in 'NiGGeR_BotsChat'
+            @Ger.callback(filters=filters.chat('NiGGeR_BotsChat') | filters.regex('hello'))
 
-            # Filter all queries with the word 'bots' BUT which are NOT done in 'GerBotsChat'
-            @Ger.callback(filters=~filters.chat('GerBotsChat') & filters.regex('hello'))
+            # Filter all queries with the word 'bots' BUT which are NOT done in 'NiGGeR_BotsChat'
+            @Ger.callback(filters=~filters.chat('NiGGeR_BotsChat') & filters.regex('hello'))
             # or
-            @Ger.callback(filters=filters.regex('hello') & ~filters.chat('GerBotsChat'))
+            @Ger.callback(filters=filters.regex('hello') & ~filters.chat('NiGGeR_BotsChat'))
             ```
         """
         # ToDo:

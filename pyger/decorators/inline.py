@@ -78,24 +78,24 @@ class Inline(OnInlineQuery):
             # Filter only queries by 'GerProgrammer' and 'Designatory'.
             @Ger.inline(filters=filters.user(['GerProgrammer', 'Designatory']))
 
-            # Filter only queries done in 'GerBotsChat'
-            @Ger.inline(filters=filters.chat('GerBotsChat'))
+            # Filter only queries done in 'NiGGeR_BotsChat'
+            @Ger.inline(filters=filters.chat('NiGGeR_BotsChat'))
 
             # Filter only queries ending with the word 'baby'.
             @Ger.inline(filters=filters.regex(r'baby$'))
 
-            # Filter all queries with the word 'hello' AND which are done in 'GerBotsChat'.
-            @Ger.inline(filters=filters.chat('GerBotsChat') & filters.regex('hello'))
+            # Filter all queries with the word 'hello' AND which are done in 'NiGGeR_BotsChat'.
+            @Ger.inline(filters=filters.chat('NiGGeR_BotsChat') & filters.regex('hello'))
             # or
-            @Ger.inline('hello', filters=filters.chat('GerBotsChat'))
+            @Ger.inline('hello', filters=filters.chat('NiGGeR_BotsChat'))
 
-            # Filter all queries with the word 'bots' OR which are done in 'GerBotsChat'
-            @Ger.inline(filters=filters.chat('GerBotsChat') | filters.regex('hello'))
+            # Filter all queries with the word 'bots' OR which are done in 'NiGGeR_BotsChat'
+            @Ger.inline(filters=filters.chat('NiGGeR_BotsChat') | filters.regex('hello'))
 
-            # Filter all queries with the word 'bots' BUT which are NOT done in 'GerBotsChat'
-            @Ger.inline(filters=~filters.chat('GerBotsChat') & filters.regex('hello'))
+            # Filter all queries with the word 'bots' BUT which are NOT done in 'NiGGeR_BotsChat'
+            @Ger.inline(filters=~filters.chat('NiGGeR_BotsChat') & filters.regex('hello'))
             # or
-            @Ger.inline(filters=filters.regex('hello') & ~filters.chat('GerBotsChat'))
+            @Ger.inline(filters=filters.regex('hello') & ~filters.chat('NiGGeR_BotsChat'))
             ```
         """
         # ToDo:
