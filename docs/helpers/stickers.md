@@ -1,3 +1,3 @@
-# pystark.helpers.stickers
+# pyger.helpers.stickers
 
-::: pystark.helpers.stickers
+::: pyger.helpers.stickers

@@ -1,14 +1,14 @@
-# PyStark Helpers
+# Pyger Helpers
 
-PyStark includes a small package with some helpful functions that can be used anywhere
+Pyger includes a small package with some helpful functions that can be used anywhere
 
 !!! important
 
-    Helpers is a separate package which means that it can also be used without using pystark to create bot
+    Helpers is a separate package which means that it can also be used without using pyger to create bot
 
 ---
 
-These are the helpers present in `pystark.helpers` package:
+These are the helpers present in `pyger.helpers` package:
 
 <br>
 

@@ -1,3 +1,3 @@
 # Patch Decorator
 
-::: pystark.helpers.patch
+::: pyger.helpers.patch

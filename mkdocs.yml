@@ -1,17 +1,17 @@
-site_name: PyStark
-site_url: https://pystark.codes
-site_author: StarkProgrammer
-site_description: The awesome python library to create Telegram Bots based on pyrogram. Updates available at https://t.me/pystark
-repo_name: starkbotsindustries/pystark
-repo_url: https://github.com/StarkBotsIndustries/pystark
+site_name: Pyger
+site_url: https://pyger.codes
+site_author: GerProgrammer
+site_description: The awesome python library to create Telegram Bots based on pyrogram. Updates available at https://t.me/pyger
+repo_name: unknownusernametopick/pyger
+repo_url: https://github.com/unknownusernametopick/pyger
 #edit_uri: ""
-copyright: Copyright &copy; 2022, <a href='http://github.com/StarkBotsIndustries' target='_blank'>Stark Programmer</a>
+copyright: Copyright &copy; 2022, <a href='http://github.com/unknownusernametopick' target='_blank'>Ger Programmer</a>
 
 theme:
   name: 'material'
   custom_dir: docs/overrides
   favicon: images/favicon.ico
-  logo: images/pystark.png
+  logo: images/Pyger.png
   icon:
     repo: fontawesome/brands/github
   features:
@@ -62,7 +62,7 @@ nav:
     - topics/plugins.md
     - topics/bot-menu.md
   - Classes:
-    - classes/stark.md
+    - classes/ger.md
     - classes/message.md
   - Decorators:
     - decorators/index.md
@@ -108,8 +108,8 @@ extra_css:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/StarkBotsIndustries
+      link: https://github.com/unknownusernametopick
     - icon: fontawesome/brands/python
-      link: https://pypi.org/project/pystark/
+      link: https://pypi.org/project/pyger/
     - icon: fontawesome/brands/telegram
-      link: https://t.me/StarkBots
+      link: https://t.me/GerBots

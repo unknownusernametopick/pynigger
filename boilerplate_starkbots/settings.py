@@ -6,9 +6,9 @@ HELP = "Help Message"
 
 ABOUT = "do this"
 
-REPO = "pystark"
+REPO = "pyger"
 
-STARKBOTS = True
+GERBOTS = True
 
 # FULL_MESSAGES = True
 

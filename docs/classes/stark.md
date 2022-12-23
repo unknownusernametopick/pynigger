@@ -1,10 +1,10 @@
-# Class Stark
+# Class Ger
 
-This is the main class of PyStark. This guide will explain the usage of important functions in ``Stark`` class.
+This is the main class of Pyger. This guide will explain the usage of important functions in ``Ger`` class.
 
 ---
 
-::: pystark.client.Stark
+::: pyger.client.Ger
       selection:
           members:
             - activate

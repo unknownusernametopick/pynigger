@@ -1,5 +1,5 @@
 # Project Configuration
-# See https://pystark.codes/start/settings for details
+# See https://pyger.codes/start/settings for details
 
 
 # Path of the 'plugins' directory in relation to the root directory or List of multiple paths
@@ -13,7 +13,7 @@ SET_BOT_MENU = True
 # Prefixes for commands. For multiple prefixes, specify multiple together like ["&", "*", "/", "."]
 CMD_PREFIXES = ["/"]
 
-# The addons (default plugins) you want to load from pystark
+# The addons (default plugins) you want to load from pyger
 ADDONS = [
     "start",  # /start command which replies with text in START variable in private chats and START_IN_GROUPS variables for groups.
     "help",  # /help command which replies with text in HELP variable. Only private chats
@@ -30,7 +30,7 @@ ADDONS = [
 # List of usernames or chat ids where users must join. Only needed if 'must_join' addon is enabled.
 MUST_JOIN = []
 
-# Specify timezone for logging. Defaults to India (Asia/Kolkata). Full list at https://gist.github.com/StarkBotsIndustries/7a6210355f40052a71ba96032d4638df
+# Specify timezone for logging. Defaults to India (Asia/Kolkata). Full list at https://gist.github.com/unknownusernametopick/7a6210355f40052a71ba96032d4638df
 TIMEZONE = "Asia/Kolkata"
 
 # Only if postgresql database is used
@@ -53,7 +53,7 @@ Available Commands
 """
 
 # About Message. Message sent at /about command. Only needed if `about` addon is enabled
-ABOUT = "About This Awesome Bot \nDeveloped using @PyStark"
+ABOUT = "About This Awesome Bot \nDeveloped using @Pyger"
 
 # Start Message for groups. Leave Empty ("") to remove.
 # Remove below line completely to use the default one which is: "Hey :) Ping me privately if you have any questions on how to use me."

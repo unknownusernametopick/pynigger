@@ -1,6 +1,6 @@
 # Environment Variables
 
-PyStark needs some special keys as environment variables to run your bot. This section will explain how to get them and configure them.
+Pyger needs some special keys as environment variables to run your bot. This section will explain how to get them and configure them.
 
 !!! important
 
@@ -39,7 +39,7 @@ It should be filled as `BOT_TOKEN`
 ## Non-mandatory Variables
 
 - `SUDO_USERS` - User IDs (or Usernames) of users that can use `sudo_only` commands, buttons, inline searches. Specify multiple users by adding spaces.
-- `LOG_CHAT` - Username or ID of telegram group/channel for logging to telegram using [`Stark.log_tg`][pystark.client.Stark.log_tg] method.
+- `LOG_CHAT` - Username or ID of telegram group/channel for logging to telegram using [`Ger.log_tg`][pyger.client.Ger.log_tg] method.
 - `OWNER_ID` - Your Telegram ID (or Username). Get it using [Identity Bot](https://t.me/TheIdentityBot) or [Rose](https://t.me/MissRose_bot)
 
 ---

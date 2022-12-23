@@ -2,9 +2,9 @@
 
 ---
 
-## What is PyStark?
+## What is Pyger?
 
-- PyStark is a spoon-feeding library based on Pyrogram.
+- Pyger is a spoon-feeding library based on Pyrogram.
 
 - Pyrogram is a spoon-feeding MTProto Framework made in Python.
 

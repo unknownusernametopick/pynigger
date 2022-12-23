@@ -1,21 +1,21 @@
 # Using Databases
 
-You can use any database you wish with PyStark, but we have provided a simple default setup for some databases, such as PostgreSQL and TelegramDB, to make them even easier to use.
+You can use any database you wish with Pyger, but we have provided a simple default setup for some databases, such as PostgreSQL and TelegramDB, to make them even easier to use.
 By following this guide, you will have a basic understanding of how to use them.
 
 ---
 
 ## PostgreSQL (using sqlalchemy)
 
-- **Database URL** - You need to add ``DATABASE_URL`` to ``.env``. If you are using Heroku boilerplate, leave it to **Heroku** and **pystark**. Otherwise, you can get a Database URL from [ElephantSQL](http://www.elephantsql.com)
+- **Database URL** - You need to add ``DATABASE_URL`` to ``.env``. If you are using Heroku boilerplate, leave it to **Heroku** and **pyger**. Otherwise, you can get a Database URL from [ElephantSQL](http://www.elephantsql.com)
 
 - **Creating Tables** - You need to create all the tables with all columns you need. In Python, using Classes.
 
 Below is a code example for a table named ``users`` with 3 columns named ``user_id``, ``name``, and ``aim``:
 
 ```python
-# Import class 'Database' from pystark
-from pystark.database.sql import Database
+# Import class 'Database' from pyger
+from pyger.database.sql import Database
 # Import basic sqlalchemy classes
 from sqlalchemy import Column, Integer, String
 
@@ -42,7 +42,7 @@ class Users(db.base):
 Users.__table__.create(checkfirst=True)
 ```
 
-- **Querying Tables** - You can query tables using ``Session`` object or the in-built pystark functions.
+- **Querying Tables** - You can query tables using ``Session`` object or the in-built pyger functions.
 
     - [Using Session object](/databases/postgres#session-object)
     - [Using in-built functions](/databases/postgres#default-functions)

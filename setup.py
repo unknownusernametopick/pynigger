@@ -1,21 +1,3 @@
-# PyStark - Python add-on extension to Pyrogram
-# Copyright (C) 2021-2022 Stark Bots <https://github.com/StarkBotsIndustries>
-#
-# This file is part of PyStark.
-#
-# PyStark is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# PyStark is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with PyStark. If not, see <https://www.gnu.org/licenses/>.
-
 import os
 import re
 from setuptools import setup
@@ -26,7 +8,7 @@ with open("README.md", encoding="utf-8") as f:
 with open("requirements.txt", encoding="utf-8") as r:
     install_requires = [i.strip() for i in r if not i.startswith('#')]
 
-with open("pystark/constants.py", "r", encoding="utf-8") as f:
+with open("pyger/constants.py", "r", encoding="utf-8") as f:
     text = f.read()
     pat = r"['\"]([^'\"]+)['\"]"
     version = re.search("__version__ = "+pat, text).group(1)
@@ -35,20 +17,20 @@ with open("pystark/constants.py", "r", encoding="utf-8") as f:
 
 
 def get_packages():
-    return [path.replace("\\", ".").replace("/", ".") for path, _, _ in os.walk("pystark") if "__" not in path]
+    return [path.replace("\\", ".").replace("/", ".") for path, _, _ in os.walk("pyger") if "__" not in path]
 
 
 setup(
-    name='PyStark',
+    name='Pyger',
     packages=get_packages(),
     version=version,
     license='GPLv3+',
     description=description,
     long_description=long_description,
     long_description_content_type="text/markdown",
-    author='StarkProgrammer',
-    author_email='starkbotsindustries@gmail.com',
-    url='https://github.com/StarkBotsIndustries/PyStark',
+    author='GerProgrammer',
+    author_email='unknownusernametopick@gmail.com',
+    url='https://github.com/unknownusernametopick/Pyger',
     keywords=['telegram', 'bot', 'pyrogram', 'python', 'telegram-bot'],
     install_requires=install_requires,
     zip_safe=False,
@@ -73,14 +55,14 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules'
     ],
     project_urls={
-        "Support": "https://t.me/StarkBotsChat",
-        "Community": "https://t.me/StarkBots",
-        "Updates": "https://t.me/pystark",
-        "Documentation": "https://pystark.codes/",
+        "Support": "https://t.me/GerBotsChat",
+        "Community": "https://t.me/GerBots",
+        "Updates": "https://t.me/pyger",
+        "Documentation": "https://pyger.codes/",
     },
     entry_points={
         'console_scripts': [
-            'pystark = pystark.cli:main',
+            'pyger = pyger.cli:main',
         ],
     },
 )

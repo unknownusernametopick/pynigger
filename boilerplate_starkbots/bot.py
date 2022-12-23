@@ -1,4 +1,4 @@
-from pystark import Stark
+from pyger import Ger
 
 
-Stark().activate()
+Ger().activate()

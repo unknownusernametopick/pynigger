@@ -1,4 +1,4 @@
-## PyStark Bot
+## Pyger Bot
 
 
 Click on below button, when the code is in your GitHub repository.

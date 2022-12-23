@@ -1,7 +1,7 @@
-# Stark.command
+# Ger.command
 
 
-The main python decorator of class Stark.
+The main python decorator of class Ger.
 
 
-::: pystark.decorators.command.Command.command
+::: pyger.decorators.command.Command.command

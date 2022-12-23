@@ -1,6 +1,6 @@
-# Stark.inline
+# Ger.inline
 
-Python decorator of class Stark to handle inline queries.
+Python decorator of class Ger to handle inline queries.
 
 
-::: pystark.decorators.inline.Inline.inline
+::: pyger.decorators.inline.Inline.inline
