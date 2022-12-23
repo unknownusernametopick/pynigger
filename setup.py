@@ -8,7 +8,7 @@ with open("README.md", encoding="utf-8") as f:
 with open("requirements.txt", encoding="utf-8") as r:
     install_requires = [i.strip() for i in r if not i.startswith('#')]
 
-with open("pyger/constants.py", "r", encoding="utf-8") as f:
+with open("pynigger/constants.py", "r", encoding="utf-8") as f:
     text = f.read()
     pat = r"['\"]([^'\"]+)['\"]"
     version = re.search("__version__ = "+pat, text).group(1)
@@ -17,11 +17,11 @@ with open("pyger/constants.py", "r", encoding="utf-8") as f:
 
 
 def get_packages():
-    return [path.replace("\\", ".").replace("/", ".") for path, _, _ in os.walk("pyger") if "__" not in path]
+    return [path.replace("\\", ".").replace("/", ".") for path, _, _ in os.walk("pynigger") if "__" not in path]
 
 
 setup(
-    name='Pyger',
+    name='PyNigger',
     packages=get_packages(),
     version=version,
     license='GPLv3+',
@@ -30,7 +30,7 @@ setup(
     long_description_content_type="text/markdown",
     author='GerProgrammer',
     author_email='unknownusernametopick@gmail.com',
-    url='https://github.com/unknownusernametopick/Pyger',
+    url='https://github.com/unknownusernametopick/PyNigger',
     keywords=['telegram', 'bot', 'pyrogram', 'python', 'telegram-bot'],
     install_requires=install_requires,
     zip_safe=False,
@@ -57,12 +57,12 @@ setup(
     project_urls={
         "Support": "https://t.me/NiGGeR_BotsChat",
         "Community": "https://t.me/NiGGeR_Bots",
-        "Updates": "https://t.me/pyger",
-        "Documentation": "https://pyger.codes/",
+        "Updates": "https://t.me/pynigger",
+        "Documentation": "https://pynigger.codes/",
     },
     entry_points={
         'console_scripts': [
-            'pyger = pyger.cli:main',
+            'pynigger = pynigger.cli:main',
         ],
     },
 )

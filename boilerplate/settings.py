@@ -1,5 +1,5 @@
 # Project Configuration
-# See https://pyger.codes/start/settings for details
+# See https://pynigger.codes/start/settings for details
 
 
 # Path of the 'plugins' directory in relation to the root directory or List of multiple paths
@@ -13,7 +13,7 @@ SET_BOT_MENU = True
 # Prefixes for commands. For multiple prefixes, specify multiple together like ["&", "*", "/", "."]
 CMD_PREFIXES = ["/"]
 
-# The addons (default plugins) you want to load from pyger
+# The addons (default plugins) you want to load from pynigger
 ADDONS = [
     "start",  # /start command which replies with text in START variable in private chats and START_IN_GROUPS variables for groups.
     "help",  # /help command which replies with text in HELP variable. Only private chats
@@ -53,7 +53,7 @@ Available Commands
 """
 
 # About Message. Message sent at /about command. Only needed if `about` addon is enabled
-ABOUT = "About This Awesome Bot \nDeveloped using @Pyger"
+ABOUT = "About This Awesome Bot \nDeveloped using @PyNigger"
 
 # Start Message for groups. Leave Empty ("") to remove.
 # Remove below line completely to use the default one which is: "Hey :) Ping me privately if you have any questions on how to use me."

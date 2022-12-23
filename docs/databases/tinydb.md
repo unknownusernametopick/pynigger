@@ -24,8 +24,8 @@ It's recommended to use TinyDB during these situations. If you:
 Here's how to initialize TinyDB
 
 ```python
-# import db object from pyger
-from pyger.database.tiny_db import db, Query
+# import db object from pynigger
+from pynigger.database.tiny_db import db, Query
 
 # or create a db object yourself
 from tinydb import TinyDB, Query
@@ -39,20 +39,20 @@ db = TinyDB('db.json')
 - Insert Data
 
 ```python
-from pyger.database.tiny_db import db
+from pynigger.database.tiny_db import db
 
 # just pass a python dictionary to insert() function.
 db.insert({'type': 'apple', 'count': 7})
-db.insert({'name': 'Ger', 'aim': 'Meet God'})
+db.insert({'name': 'Nigger', 'aim': 'Meet God'})
 ```
 
 - Search/Query Data
 
 ```python
-from pyger.database.tiny_db import db
+from pynigger.database.tiny_db import db
 # Along with db object, you need Query object too.
-# import Query object from pyger or tinydb
-from pyger.database.tiny_db import Query
+# import Query object from pynigger or tinydb
+from pynigger.database.tiny_db import Query
 # or
 from tinydb import Query
 
@@ -60,31 +60,31 @@ Fruit = Query()
 data = db.search(Fruit.type == 'apple')
 
 User = Query()
-data = db.search(User.name == 'Ger')
+data = db.search(User.name == 'Nigger')
 ```
 
 - Remove/Delete Data
 
 ```python
-from pyger.database.tiny_db import db, Query
+from pynigger.database.tiny_db import db, Query
 
 Fruit = Query()
 data = db.remove(Fruit.type == 'apple')
 
 User = Query()
-data = db.remove(User.name == 'Ger')
+data = db.remove(User.name == 'Nigger')
 ```
 
 - Update Data
 
 ```python
-from pyger.database.tiny_db import db, Query
+from pynigger.database.tiny_db import db, Query
 
 Fruit = Query()
 data = db.update({'count': 10}, Fruit.type == 'apple')
 
 User = Query()
-data = db.update({'aim': 'Create Time Machine'}, User.name == 'Ger')
+data = db.update({'aim': 'Create Time Machine'}, User.name == 'Nigger')
 ```
 
 - Get all Data

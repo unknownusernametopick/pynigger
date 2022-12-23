@@ -1,3 +1,3 @@
 # Patch Decorator
 
-::: pyger.helpers.patch
+::: pynigger.helpers.patch

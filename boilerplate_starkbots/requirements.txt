@@ -1,1 +1,1 @@
-Pyger~=1.1.1
+PyNigger~=1.1.1

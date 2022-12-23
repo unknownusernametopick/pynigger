@@ -7,17 +7,17 @@ Telegram has a feature to create a bot menu for your bot. It's usually created u
 </div>
 
 
-But it's exhausting to keep updating it using BotFather. Why not let pyger generate it for you automatically at runtime?
+But it's exhausting to keep updating it using BotFather. Why not let pynigger generate it for you automatically at runtime?
 
 **But How to Do That?**
 
 It's very easy. Just add command description when you create a function. Like this:
 
 ```python
-from pyger import Ger
+from pynigger import Nigger
 
 
-@Ger.command('stats', description='Get the bot stats')
+@Nigger.command('stats', description='Get the bot stats')
 def stats():
     # your code
 ```
@@ -26,10 +26,10 @@ def stats():
 Or a more simple look:
 
 ```python
-from pyger import Ger
+from pynigger import Nigger
 
 
-@Ger.cmd('stats', 'Get the bot stats')
+@Nigger.cmd('stats', 'Get the bot stats')
 def stats():
     # your code
 ```
@@ -38,10 +38,10 @@ def stats():
 Don't want users to see a command in menu? Then don't pass it.
 
 ```python
-from pyger import Ger
+from pynigger import Nigger
 
 
-@Ger.cmd('stats')  # no description
+@Nigger.cmd('stats')  # no description
 def stats():
     # your code
 ```
@@ -56,7 +56,7 @@ def stats():
 
 <a name="customize-bot-menu"></a>
 
-**Prevent pyger from updating bot menu**
+**Prevent pynigger from updating bot menu**
 
 
 By default, this feature is enabled. But what if you don't want it? You need to configure `SET_BOT_MENU` option of `settings.py`

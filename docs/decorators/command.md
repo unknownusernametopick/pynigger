@@ -1,7 +1,7 @@
-# Ger.command
+# Nigger.command
 
 
-The main python decorator of class Ger.
+The main python decorator of class Nigger.
 
 
-::: pyger.decorators.command.Command.command
+::: pynigger.decorators.command.Command.command

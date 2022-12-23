@@ -32,15 +32,15 @@
 
 - Auto Update Bot Menu at runtime. [Read More](/topics/bot-menu)
 - Added description argument in ``command`` decorator(for bot menu).
-- ``Ger.data()`` now also returns a dictionary of command descriptions (key=command, value=description). See [Ger.data][pyger.client.Ger.data]
-- ``Ger.activate`` now takes an optional argument ``set_menu`` to disable (or enable) auto-update of bot menu. [Read More](/topics/bot-menu#customize-bot-menu)
+- ``Nigger.data()`` now also returns a dictionary of command descriptions (key=command, value=description). See [Nigger.data][pynigger.client.Nigger.data]
+- ``Nigger.activate`` now takes an optional argument ``set_menu`` to disable (or enable) auto-update of bot menu. [Read More](/topics/bot-menu#customize-bot-menu)
 - Added docs for Bot Menu. [Read Here](/topics/bot-menu)
 
 ### v0.2.6 <small>- January 20, 2022</small>
 
-- Added two new static methods to ``Ger`` class - `Ger.list_args` and `Ger.data()`
-- Improved ``Ger.log()`` function. Now pass int values for levels. See [Ger.log][pyger.client.Ger.log]
-- Added docs for class ``Ger`` - [Read Here](/classes/ger)
+- Added two new static methods to ``Nigger`` class - `Nigger.list_args` and `Nigger.data()`
+- Improved ``Nigger.log()`` function. Now pass int values for levels. See [Nigger.log][pynigger.client.Nigger.log]
+- Added docs for class ``Nigger`` - [Read Here](/classes/ger)
 
 
 ### v0.2.5 <small>- January 20, 2022</small>

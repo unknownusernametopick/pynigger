@@ -1,4 +1,4 @@
-from pyger import Ger
+from pynigger import Nigger
 
 
-Ger().activate()
+Nigger().activate()

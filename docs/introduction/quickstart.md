@@ -1,6 +1,6 @@
 # Quick Start
 
-Following these steps will allow you to see **Pyger** in action as quickly as possible.
+Following these steps will allow you to see **PyNigger** in action as quickly as possible.
 
 !!! important
     Installation of Python with version 3.9 or above is required!
@@ -11,16 +11,16 @@ Following these steps will allow you to see **Pyger** in action as quickly as po
 
 1\. [Open up your terminal](/meta/faqs#terminal).
 
-2\. Install Pyger with pip
+2\. Install PyNigger with pip
 
 ```shell
-$ pip3 install pyger
+$ pip3 install pynigger
 ```
 
-3\. Generate a boilerplate using Pyger's command-line tool.
+3\. Generate a boilerplate using PyNigger's command-line tool.
 
 ```shell
-$ pyger --boilerplate
+$ pynigger --boilerplate
 ```
 
 4\. Enter the newly created `boilerplate` directory.

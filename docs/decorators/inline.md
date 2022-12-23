@@ -1,6 +1,6 @@
-# Ger.inline
+# Nigger.inline
 
-Python decorator of class Ger to handle inline queries.
+Python decorator of class Nigger to handle inline queries.
 
 
-::: pyger.decorators.inline.Inline.inline
+::: pynigger.decorators.inline.Inline.inline

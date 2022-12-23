@@ -2,8 +2,8 @@
 
 {% if page.edit_url %}
     {% if not page.edit_url.endswith('docs/index.md') %}  <!-- Don't add edit button on main webpage -->
-        {% set edit = "https://github.com/unknownusernametopick/pyger/edit" %}
-        <!-- {% set view = "https://raw.githubusercontent.com/unknownusernametopick/pyger" %} -->
+        {% set edit = "https://github.com/unknownusernametopick/pynigger/edit" %}
+        <!-- {% set view = "https://raw.githubusercontent.com/unknownusernametopick/pynigger" %} -->
         <a target="_blank" href="{{ page.edit_url }}" title="{{ lang.t('edit.link.title') }}" class="md-content__button md-icon">
             {% include ".icons/material/file-edit-outline.svg" %}
         </a>

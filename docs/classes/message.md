@@ -1,8 +1,8 @@
 # Class Message
 
-These are the `additional` methods added to any message instance by pyger. For other methods refer to [pyrogram documentation](https://docs.pyrogram.org/api/bound-methods/#message)
+These are the `additional` methods added to any message instance by pynigger. For other methods refer to [pyrogram documentation](https://docs.pyrogram.org/api/bound-methods/#message)
 
-::: pyger.methods.message.Message
+::: pynigger.methods.message.Message
       selection:
           members:
             - react

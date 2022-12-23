@@ -1,9 +1,9 @@
 # Querying Postgres Tables
 
-In this guide, you will learn how to query using postgres tables while using Pyger
+In this guide, you will learn how to query using postgres tables while using PyNigger
 
 !!! tip 
-    No need to add `sqlalchemy` or `psycopg2` to `requirement.txt` as they are dependencies of pyger
+    No need to add `sqlalchemy` or `psycopg2` to `requirement.txt` as they are dependencies of pynigger
 
 ---
 
@@ -11,7 +11,7 @@ In this guide, you will learn how to query using postgres tables while using Pyg
 
 ## Using the in-built functions
 
-Pyger provides some default functions to query postgres tables. These functions allow you to query tables using table name (``__tablename__`` attribute), that is, a string instead of a class. Therefore, you do not need to import classes.
+PyNigger provides some default functions to query postgres tables. These functions allow you to query tables using table name (``__tablename__`` attribute), that is, a string instead of a class. Therefore, you do not need to import classes.
 
 !!! note
 
@@ -24,7 +24,7 @@ First thing you need to do is creating an instance of `Database` class
     It's a good idea to create this instance in a separate module so that it's easily importable.
 
 ```python
-from pyger.database.sql import Database
+from pynigger.database.sql import Database
 
 db = Database()
 ```
@@ -107,11 +107,11 @@ async def delete_user():
 ## Using the Regular Way (Session object)
 
 You can query tables using the ``session`` object which is the regular way in sqlalchemy.
-Session objects is available as an attribute to `Database` class of `pyger.database.sql`
+Session objects is available as an attribute to `Database` class of `pynigger.database.sql`
 
 ```python
 # import 'Session' object
-from pyger.database.sql import Database
+from pynigger.database.sql import Database
 # import Python class for respective table
 # let's say it is in 'users_sql.py' inside 'database' folder.
 from database.users_sql import Users

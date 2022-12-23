@@ -62,7 +62,7 @@
 
 ## Credits
 
-- Me for [pyger](https://github.com/unknownusernametopick/pyger)
+- Me for [pynigger](https://github.com/unknownusernametopick/pynigger)
 - [Dan Tès](https://github.com/delivrance) for his [Pyrogram](https://docs.pyrogram.org) Library
 
 ## Support

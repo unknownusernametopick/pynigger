@@ -25,8 +25,8 @@ Like there are Tables in SQL, TelegramDB has DataPacks. It is just a fancy term 
 ## Create a DataPack
 
 ```python
-from pyger import Ger
-from pyger.database.telegram_db import DataPack, Member, Session
+from pynigger import Nigger
+from pynigger.database.telegram_db import DataPack, Member, Session
 
 
 # Create a DataPack like you create a Table in Postgres (SQLAlchemy).
@@ -51,15 +51,15 @@ Session.prepare_datapack(TestData)
 ## Query a DataPack
 
 ```python
-# Import Session object from pyger
-from pyger.database.telegram_db import Session
+# Import Session object from pynigger
+from pynigger.database.telegram_db import Session
 # "test_data.py" is a file in "database" folder, where class TestData is located.
 
 from database.test_data import TestData
 
 
 # Commit to DataPack.
-test = TestData(1, name="Ger", aim="Create Time Machine")
+test = TestData(1, name="Nigger", aim="Create Time Machine")
 Session.commit(test)
 
 

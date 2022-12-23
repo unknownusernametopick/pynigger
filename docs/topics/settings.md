@@ -45,7 +45,7 @@ PLUGINS = "plugins"
 
 Use this setting to enable or disable the bot menu. [Read more](/topics/bot-menu) about bot menu.
 
-Defaults to `True`, i.e, pyger will set the bot menu at runtime.
+Defaults to `True`, i.e, pynigger will set the bot menu at runtime.
 
 ```python
 SET_BOT_MENU = True
@@ -92,7 +92,7 @@ CMD_PREFIXES = ["/", "!", "&"]
     For Example, If you load "start" addon and also create a `/start` command yourself, bot will use your own command.
 
 
-Pyger comes with many ready-to-use plugins which can be directly added using `ADDONS` option.
+PyNigger comes with many ready-to-use plugins which can be directly added using `ADDONS` option.
 
 These are the available options:
 
@@ -246,7 +246,7 @@ To configure the ABOUT message, i.e, the message sent at `/about` command. Only 
 Default Value:
 
 ```python
-ABOUT = "About This Bot \nDeveloped using @Pyger"
+ABOUT = "About This Bot \nDeveloped using @PyNigger"
 ```
 
 ---
@@ -273,7 +273,7 @@ MUST_JOIN = []
 
 ## DATABASE_TABLES
 
-List of pre-made database tables you want to ship from Pyger.
+List of pre-made database tables you want to ship from PyNigger.
 
 ### bans
 

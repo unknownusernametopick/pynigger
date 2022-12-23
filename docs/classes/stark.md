@@ -1,10 +1,10 @@
-# Class Ger
+# Class Nigger
 
-This is the main class of Pyger. This guide will explain the usage of important functions in ``Ger`` class.
+This is the main class of PyNigger. This guide will explain the usage of important functions in ``Nigger`` class.
 
 ---
 
-::: pyger.client.Ger
+::: pynigger.client.Nigger
       selection:
           members:
             - activate

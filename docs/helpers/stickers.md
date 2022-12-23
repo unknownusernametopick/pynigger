@@ -1,3 +1,3 @@
-# pyger.helpers.stickers
+# pynigger.helpers.stickers
 
-::: pyger.helpers.stickers
+::: pynigger.helpers.stickers

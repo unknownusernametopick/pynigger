@@ -1,10 +1,10 @@
-# Bots Using Pyger
+# Bots Using PyNigger
 
-This is a list of all the known bots created using pyger. 
+This is a list of all the known bots created using pynigger. 
 
 !!! important
 
-    If you created your own open source bot using pyger, feel free to make a pull request or [open an issue](https://github.com/unknownusernametopick/pyger/issues/new) on GitHub or you can also contact in [Telegram Support Chat](https://t.me/NiGGeR_BotsChat).
+    If you created your own open source bot using pynigger, feel free to make a pull request or [open an issue](https://github.com/unknownusernametopick/pynigger/issues/new) on GitHub or you can also contact in [Telegram Support Chat](https://t.me/NiGGeR_BotsChat).
 
 
 ## Open Source

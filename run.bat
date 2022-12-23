@@ -1,5 +1,5 @@
 @echo off
-TITLE Pyger Batch Script File
+TITLE PyNigger Batch Script File
 
 @REM HELP
 cls
@@ -23,8 +23,8 @@ rmdir dist /q/s && (
 ) || (
   echo Cannot found %folder%
 )
-set folder2='Pyger.egg-info'
-rmdir Pyger.egg-info /q/s && (
+set folder2='PyNigger.egg-info'
+rmdir PyNigger.egg-info /q/s && (
   echo Deleted %folder2%
 ) || (
   echo Cannot found %folder2%
@@ -59,7 +59,7 @@ if "%1" == "docs" goto :docs
 :test
 echo [Upload to TestPyPI]
 twine upload --repository-url https://test.pypi.org/legacy/ dist/*
-if "%2" == "open" start https://test.pypi.org/project/pyger
+if "%2" == "open" start https://test.pypi.org/project/pynigger
 echo.
 echo [All Done]
 exit /b 0
@@ -67,7 +67,7 @@ exit /b 0
 :docs
 echo [Deploying Docs]
 call mkdocs gh-deploy -m "Deployed {sha} with MkDocs version: {version}"
-if "%2" == "open" start https://pyger.codes/
+if "%2" == "open" start https://pynigger.codes/
 if "%1" == "docs" exit /b 0
 echo.
 echo [All Done]
@@ -76,7 +76,7 @@ exit /b 0
 :main
 echo [Upload to PyPI]
 twine upload dist/*
-if "%2" == "open" start https://pypi.org/project/pyger
+if "%2" == "open" start https://pypi.org/project/pynigger
 echo.
 echo [All Done]
 exit /b 0

@@ -33,7 +33,7 @@ features.txt
 site/
 
 # Temp
-pyger/helpers/requests.py
-pyger/decorators/admins.py
+pynigger/helpers/requests.py
+pynigger/decorators/admins.py
 requests.md
 admins.md

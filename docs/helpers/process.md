@@ -1,3 +1,3 @@
-# pyger.helpers.process
+# pynigger.helpers.process
 
-::: pyger.helpers.process
+::: pynigger.helpers.process

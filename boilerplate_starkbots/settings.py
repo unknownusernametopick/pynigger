@@ -6,7 +6,7 @@ HELP = "Help Message"
 
 ABOUT = "do this"
 
-REPO = "pyger"
+REPO = "pynigger"
 
 NIGGER_BOTS = True
 

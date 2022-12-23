@@ -2,9 +2,9 @@
 
 ---
 
-## What is Pyger?
+## What is PyNigger?
 
-- Pyger is a spoon-feeding library based on Pyrogram.
+- PyNigger is a spoon-feeding library based on Pyrogram.
 
 - Pyrogram is a spoon-feeding MTProto Framework made in Python.
 

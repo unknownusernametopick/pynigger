@@ -1,6 +1,6 @@
 # Customization
 
-There are a lot of customization options in Pyger to customize the behavior of your bot. All customization options can be configured using `settings.py` which is generated along with boilerplate. This is the same thing we read in the last page but with some highlights.
+There are a lot of customization options in PyNigger to customize the behavior of your bot. All customization options can be configured using `settings.py` which is generated along with boilerplate. This is the same thing we read in the last page but with some highlights.
 
 !!! tip 
 
@@ -10,7 +10,7 @@ There are a lot of customization options in Pyger to customize the behavior of y
 
 ## Change the default messages
 
-Pyger comes with in-built plugins like `start` and `help`. But what if you want to have different messages than the in-built ones? They are easily customizable.
+PyNigger comes with in-built plugins like `start` and `help`. But what if you want to have different messages than the in-built ones? They are easily customizable.
 
 You can change their values in `settings.py`. Change `START` value for `/start` command in private chats, `START_IN_GROUPS` value for `/start` command in groups, `HELP` for `/help` and `ABOUT` for `/about`.
 
@@ -22,16 +22,16 @@ You may want to mention user or bot in `start` or `help` messages. You can use s
 - `{bot}` - Bot's name
 - `{user_mention}` - User mention as a hyperlink
 - `{bot_mention}` - Bot mention as a hyperlink
-- `{owner}` - Owner mention (only works if `OWNER_ID` is set, otherwise `@pyger` is used)
+- `{owner}` - Owner mention (only works if `OWNER_ID` is set, otherwise `@pynigger` is used)
 - `{commands}` - Only for [HELP](/topics/settings#help-option) message. It is replaced with all the commands and their descriptions for an easy help message.
 
-So let's say your `start` message is set to `Hi {user}` and your first name on telegram is `Ger` then bot will send `Hi Ger`.
+So let's say your `start` message is set to `Hi {user}` and your first name on telegram is `Nigger` then bot will send `Hi Nigger`.
 
 ---
 
 ## Remove the default plugins
 
-Pyger comes with many in-built plugins, also called addons. By default, four of them are enabled which are `start`, `help`, `about` and `id`
+PyNigger comes with many in-built plugins, also called addons. By default, four of them are enabled which are `start`, `help`, `about` and `id`
 To remove them you need to configure `ADDONS` options of `settings.py`.
 
 To remove all addons, do this:

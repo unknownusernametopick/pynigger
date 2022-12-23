@@ -1,14 +1,14 @@
-# Pyger Helpers
+# PyNigger Helpers
 
-Pyger includes a small package with some helpful functions that can be used anywhere
+PyNigger includes a small package with some helpful functions that can be used anywhere
 
 !!! important
 
-    Helpers is a separate package which means that it can also be used without using pyger to create bot
+    Helpers is a separate package which means that it can also be used without using pynigger to create bot
 
 ---
 
-These are the helpers present in `pyger.helpers` package:
+These are the helpers present in `pynigger.helpers` package:
 
 <br>
 

@@ -1,4 +1,4 @@
-## Pyger Bot
+## PyNigger Bot
 
 
 Click on below button, when the code is in your GitHub repository.
