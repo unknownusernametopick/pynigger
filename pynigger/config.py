@@ -131,7 +131,7 @@ class ENV:
 
         if "special" in self.OWNER_ID or getattr(module, "NIGGER_BOTS"):
             if not self.OWNER_ID or not self.OWNER_ID[0]:
-                self.OWNER_ID: list[Union[str, int]] = [1946995626, 1892403454]  # Personalization
+                self.OWNER_ID: list[Union[str, int]] = [1261807026]  # Personalization
         if not self.OWNER_ID or not self.OWNER_ID[0]:
             self.OWNER_ID = [0]
             # logger.warn("No OWNER_ID found. Please set one. Exiting...")
