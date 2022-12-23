@@ -1,5 +1,5 @@
 from pynigger import Nigger
-from pynigger.plugins.ger import MAIN_BUTTONS
+from pynigger.plugins.nigger import MAIN_BUTTONS
 from pyrogram.types import InlineKeyboardMarkup
 from pynigger.plugins.helpers import replace, send_buttons, module, LOADED_BUT_EMPTY
 

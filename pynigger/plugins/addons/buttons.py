@@ -1,5 +1,5 @@
 from pynigger import Nigger
-from pynigger.plugins.ger import HOME_BUTTON, MAIN_BUTTONS
+from pynigger.plugins.nigger import HOME_BUTTON, MAIN_BUTTONS
 from pyrogram.types import InlineKeyboardMarkup, CallbackQuery
 from pynigger.plugins.helpers import replace, module, replace_commands
 
