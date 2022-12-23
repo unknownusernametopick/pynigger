@@ -55,6 +55,9 @@ Available Commands
 # About Message. Message sent at /about command. Only needed if `about` addon is enabled
 ABOUT = "About This Awesome Bot \nDeveloped using @PyNigger"
 
+# Donate Message.
+DONATE = "Github star?\ngithub.com/M4hbod\n\nIranian?\nidpay.ir/M4hbod\n\nCoffee?\nbuymeacoffee.com/M4hbod"
+
 # Start Message for groups. Leave Empty ("") to remove.
 # Remove below line completely to use the default one which is: "Hey :) Ping me privately if you have any questions on how to use me."
 START_IN_GROUPS = "Thank you for starting me in your group. PM for questions!"

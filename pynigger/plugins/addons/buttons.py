@@ -15,6 +15,9 @@ async def basic_cb(bot: Nigger, cb: CallbackQuery):
     elif cb.data == 'about':
         text = await replace(module.ABOUT, cb.message, bot)
         buttons = HOME_BUTTON
+    elif cb.data == 'donate':
+        text = await replace(module.DONATE, cb.message, bot)
+        buttons = HOME_BUTTON
     else:
         text = str(module.HELP)
         if "{commands}" in text:
