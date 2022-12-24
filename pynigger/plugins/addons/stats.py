@@ -11,7 +11,7 @@ async def users_sql(_, msg: Message):
             await db.set("users", msg.from_user.id)
 
 
-@Nigger.cmd('stats', owner_only=True)
+@Nigger.cmd("stats", owner_only=True)
 async def stats(_, msg: Message):
     users = await db.count("users")
     await msg.reply(f"Total Users : {users}", quote=True)

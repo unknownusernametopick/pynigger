@@ -1,10 +1,8 @@
-
 import os
 import yaml
 import json
 from pynigger.logger import logger
 from pynigger.config import settings
-
 
 file = ""
 folder = ""
@@ -19,19 +17,33 @@ def l10n_setup():
         try:
             files = os.listdir(folder)
         except FileNotFoundError:
-            logger.critical("Your localization path does not exist. Please correct it or set it to ''. Exiting...")
+            logger.critical(
+                "Your localization path does not exist. Please correct it or set it to ''. Exiting..."
+            )
             raise SystemExit
-        sup = ["english.yaml", "english.yml", "en.yaml", "en.yml", "english.json", "en.json"]
+        sup = [
+            "english.yaml",
+            "english.yml",
+            "en.yaml",
+            "en.yml",
+            "english.json",
+            "en.json",
+        ]
         for s in sup:
             if s in files:
                 file = f"{folder}/{s}"
                 break
         if not file:
-            f = [f for f in files if f.endswith('.yaml') or f.endswith(".yml") or f.endswith('.json')]
+            f = [
+                f for f in files if f.endswith(".yaml") or f.endswith(".yml")
+                or f.endswith(".json")
+            ]
             if f:
                 file = f"{folder}/{f[0]}"
             else:
-                logger.warn("Your localization directory does not have a json or yaml file")
+                logger.warn(
+                    "Your localization directory does not have a json or yaml file"
+                )
         return True
     else:
         return False

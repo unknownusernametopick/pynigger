@@ -9,7 +9,6 @@ from sqlalchemy.exc import ProgrammingError
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, scoped_session
 
-
 # Needs to be outside the class so that models can exist without database
 Base = declarative_base()
 __checked__ = False
@@ -28,7 +27,7 @@ class Database:
     def __init__(self):
         self.url = ENV.DATABASE_URL
         if not self.url:
-            logger.critical('No DATABASE_URL defined. Exiting...')
+            logger.critical("No DATABASE_URL defined. Exiting...")
             raise SystemExit
         module = settings()
         self.base = Base
@@ -49,7 +48,10 @@ class Database:
         self.session: sqlalchemy.orm.Session = Session
         self.engine = Session.get_bind()
 
-    async def get(self, table_name: str, primary_key, key: Union[str] = "") -> Union[dict, None]:
+    async def get(self,
+                  table_name: str,
+                  primary_key,
+                  key: Union[str] = "") -> Union[dict, None]:
         """Get data from postgres database using table name as string.
 
         Parameters:
@@ -70,7 +72,7 @@ class Database:
         """
         tables_dict = await self.tables_dict()
         if table_name not in tables_dict:
-            raise TableNotFound(f'No such table exists : {table_name}')
+            raise TableNotFound(f"No such table exists : {table_name}")
         table = tables_dict[table_name]
         query = self.session.query(table).get(primary_key)
         if not query:
@@ -102,7 +104,7 @@ class Database:
             data = {}
         tables_dict = await self.tables_dict()
         if table_name not in tables_dict:
-            raise TableNotFound(f'No such table exists : {table_name}')
+            raise TableNotFound(f"No such table exists : {table_name}")
         table = tables_dict[table_name]
         try:
             query = self.session.query(table).get(primary_key)
@@ -128,7 +130,7 @@ class Database:
         """
         tables_dict = await self.tables_dict()
         if table_name not in tables_dict:
-            raise TableNotFound(f'No such table exists : {table_name}')
+            raise TableNotFound(f"No such table exists : {table_name}")
         table = tables_dict[table_name]
         count = self.session.query(table).count()
         return count
@@ -144,7 +146,7 @@ class Database:
         """
         tables_dict = await self.tables_dict()
         if table_name not in tables_dict:
-            raise TableNotFound(f'No such table exists : {table_name}')
+            raise TableNotFound(f"No such table exists : {table_name}")
         table = tables_dict[table_name]
         try:
             try:
@@ -154,7 +156,7 @@ class Database:
             except ProgrammingError:
                 self.session.rollback()
                 data = []
-                raw = self.session.execute(f'SELECT * FROM {table_name}')
+                raw = self.session.execute(f"SELECT * FROM {table_name}")
                 for r in raw:
                     row = {}
                     for key, value in r.items():
@@ -177,7 +179,7 @@ class Database:
         """
         tables_dict = await self.tables_dict()
         if table_name not in tables_dict:
-            raise TableNotFound(f'No such table exists : {table_name}')
+            raise TableNotFound(f"No such table exists : {table_name}")
         table = tables_dict[table_name]
         try:
             query = self.session.query(table).get(primary_key)
@@ -194,7 +196,9 @@ class Database:
             table_name (``str``):
                 Name of the table whose primary keys you need.
         """
-        return [i[0] for i in self.engine.execute('SELECT * FROM %s' % table_name)]
+        return [
+            i[0] for i in self.engine.execute("SELECT * FROM %s" % table_name)
+        ]
 
     async def get_all_data(self, table_name: str) -> list[dict]:
         """Get all data of the table as a list of rows as dictionaries
@@ -203,9 +207,13 @@ class Database:
             table_name (``str``):
                 Name of the table whose data you need.
         """
-        return [getattr(x, "_asdict")() for x in self.engine.execute('SELECT * FROM %s' % table_name)]
+        return [
+            getattr(x, "_asdict")()
+            for x in self.engine.execute("SELECT * FROM %s" % table_name)
+        ]
 
-    async def change_column_type(self, table_name: str, column_name: str, column_type: str):
+    async def change_column_type(self, table_name: str, column_name: str,
+                                 column_type: str):
         """Change Column Type of Table using raw sql queries. Supposed to be run only one time for any particular values.
 
         Parameters:
@@ -218,9 +226,11 @@ class Database:
             column_type:
                 New Column Type.
         """
-        self.engine.execute('ALTER TABLE %s ALTER COLUMN %s TYPE %s' % (table_name, column_name, column_type))
+        self.engine.execute("ALTER TABLE %s ALTER COLUMN %s TYPE %s" %
+                            (table_name, column_name, column_type))
 
-    async def add_column(self, table_name: str, column_name: str, column_type: str):
+    async def add_column(self, table_name: str, column_name: str,
+                         column_type: str):
         """Add Column of Table using raw sql queries. Supposed to be run only one time for any particular values.
 
         Parameters:
@@ -233,7 +243,8 @@ class Database:
             column_type:
                 New Column Type.
         """
-        self.engine.execute('ALTER TABLE %s ADD %s %s' % (table_name, column_name, column_type))
+        self.engine.execute("ALTER TABLE %s ADD %s %s" %
+                            (table_name, column_name, column_type))
 
     async def remove_column(self, table_name: str, column_name: str):
         """Remove Column of Table using raw sql queries. Supposed to be run only one time for any particular values.
@@ -245,7 +256,8 @@ class Database:
             column_name:
                 Name of the column you want to delete.
         """
-        self.engine.execute('ALTER TABLE %s DROP COLUMN %s' % (table_name, column_name))
+        self.engine.execute("ALTER TABLE %s DROP COLUMN %s" %
+                            (table_name, column_name))
 
     async def columns(self, table_name: str) -> list[tuple[str]]:
         """List of all public column names in the database
@@ -254,7 +266,11 @@ class Database:
             table_name (``str``):
                 Name of the table whose columns you need.
         """
-        return [x[0] for x in self.engine.execute("SELECT column_name FROM information_schema.columns WHERE table_schema = 'public' AND table_name = '%s'" % table_name)]
+        return [
+            x[0] for x in self.engine.execute(
+                "SELECT column_name FROM information_schema.columns WHERE table_schema = 'public' AND table_name = '%s'"
+                % table_name)
+        ]
 
     async def list_tables(self) -> list:
         """Returns list all tables in your database"""
@@ -275,7 +291,10 @@ class Database:
 
     async def tables_dict(self) -> dict:
         """Returns all {tablename: table} where tablename is a string and table is a model (python class)"""
-        return {table.__tablename__: table for table in self.base.__subclasses__()}
+        return {
+            table.__tablename__: table
+            for table in self.base.__subclasses__()
+        }
 
     @staticmethod
     async def _class_vars(class_obj) -> dict:

@@ -1,4 +1,3 @@
-
 from .config import ENV
 from .client import Nigger
 from .methods import Message

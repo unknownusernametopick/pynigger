@@ -6,6 +6,7 @@ from pyrogram.methods.decorators.on_inline_query import OnInlineQuery
 
 
 class Inline(OnInlineQuery):
+
     @staticmethod
     def inline(
         query: Union[str, List[str]] = None,
@@ -101,24 +102,28 @@ class Inline(OnInlineQuery):
         # ToDo:
         #   case_sensitive argument
         if isinstance(query, list):
-            cmd_filter = f.create(lambda _, __, query_: query_.query.lower() in query)
+            cmd_filter = f.create(
+                lambda _, __, query_: query_.query.lower() in query)
         elif isinstance(query, str):
             query = query.lower()
             if not startswith:
-                cmd_filter = f.create(lambda _, __, query_: query_.query.lower() == query)
+                cmd_filter = f.create(
+                    lambda _, __, query_: query_.query.lower() == query)
             else:
-                cmd_filter = f.create(lambda _, __, query_: query_.query.lower().startswith(query))
+                cmd_filter = f.create(lambda _, __, query_: query_.query.lower(
+                ).startswith(query))
         elif not query:
             cmd_filter = None
         else:
-            logger.warn(f'Inline: query cannot be of type {type(query)} - {query}]')
+            logger.warn(
+                f"Inline: query cannot be of type {type(query)} - {query}]")
             return
         if filters:
             filters_ = cmd_filter & filters
         else:
             filters_ = cmd_filter
         if sudo_only:
-            filters_ = filters_ & f.user(ENV().SUDO_USERS+ENV().OWNER_ID)
+            filters_ = filters_ & f.user(ENV().SUDO_USERS + ENV().OWNER_ID)
         elif owner_only:
             filters_ = filters_ & f.user(ENV.OWNER_ID)
         decorator = OnInlineQuery.on_inline_query(filters_, group)

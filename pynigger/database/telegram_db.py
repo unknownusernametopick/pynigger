@@ -1,10 +1,12 @@
 from pynigger import Nigger
+
 try:
     from telegramdb import TelegramDB, DataPack, Member
 except ImportError:
     import os
-    Nigger.log('Installing TelegramDB...')
-    os.system('pip3 install TelegramDB==0.2.0')
+
+    Nigger.log("Installing TelegramDB...")
+    os.system("pip3 install TelegramDB==0.2.0")
     from telegramdb import TelegramDB, DataPack, Member
 import os
 import sys
@@ -20,7 +22,7 @@ API_ID = env.API_ID
 API_HASH = env.API_HASH
 
 if not DB_SESSION:
-    Nigger.log('No DB_SESSION defined. Exiting...', "critical")
+    Nigger.log("No DB_SESSION defined. Exiting...", "critical")
     raise SystemExit
 userbot = Client(DB_SESSION, api_id=API_ID, api_hash=API_HASH)
 userbot.start()
@@ -34,8 +36,7 @@ if not DB_CHAT_ID:
 if isinstance(DB_CHAT_ID, str) and DB_CHAT_ID[1:].isdigit():
     DB_CHAT_ID = int(DB_CHAT_ID)
 
-
-sys.stdout = open(os.devnull, 'w')
+sys.stdout = open(os.devnull, "w")
 try:
     Session = TelegramDB(userbot, DB_CHAT_ID, debug=True, logger=logger)
     sys.stdout = sys.__stdout__

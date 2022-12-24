@@ -1,4 +1,3 @@
-
 import os
 from typing import Union
 from .logger import logger
@@ -7,8 +6,7 @@ from pynigger import settings as s
 from importlib import import_module
 from pynigger.plugins import nigger as h
 
-
-load_dotenv('.env')
+load_dotenv(".env")
 
 default = None
 
@@ -17,24 +15,33 @@ def settings():
     global default
     if default:
         return default
-    if os.path.exists('settings.py'):
-        mod = import_module('settings')
-    elif os.path.exists('data.py'):
-        logger.warn("File name 'data.py' for settings is deprecated. Please rename it to 'settings.py' instead.")
-        mod = import_module('data')
+    if os.path.exists("settings.py"):
+        mod = import_module("settings")
+    elif os.path.exists("data.py"):
+        logger.warn(
+            "File name 'data.py' for settings is deprecated. Please rename it to 'settings.py' instead."
+        )
+        mod = import_module("data")
     else:
         logger.warn("Settings file not found. Default values will be used.")
-        mod = import_module('pynigger.settings')
+        mod = import_module("pynigger.settings")
     for i in dir(s):
         if not i.isupper():
             continue
-        if "NIGGER_BOTS" in mod.__dict__ and getattr(mod, "NIGGER_BOTS") and i == "ADDONS":
+        if ("NIGGER_BOTS" in mod.__dict__ and getattr(mod, "NIGGER_BOTS")
+                and i == "ADDONS"):
             continue
         try:
             getattr(mod, i)
         except AttributeError:
             setattr(mod, i, getattr(s, i))
-    for i in ["NIGGER_BOTS", "FULL_MESSAGES", "CUSTOM_USERS_TABLE", "NO_BUTTONS", "REMOVE_ADDONS"]:  # my personalization (not in settings.py)
+    for i in [
+            "NIGGER_BOTS",
+            "FULL_MESSAGES",
+            "CUSTOM_USERS_TABLE",
+            "NO_BUTTONS",
+            "REMOVE_ADDONS",
+    ]:  # my personalization (not in settings.py)
         try:
             getattr(mod, i)
         except AttributeError:
@@ -44,9 +51,11 @@ def settings():
         setattr(mod, "CMD_PREFIXES", [prefixes])
     if getattr(mod, "NIGGER_BOTS") or os.getenv("NIGGER_BOTS", ""):
         # FULL_MESSAGES
-        if "FULL_MESSAGES" not in mod.__dict__ or not getattr(mod, "FULL_MESSAGES"):
+        if "FULL_MESSAGES" not in mod.__dict__ or not getattr(
+                mod, "FULL_MESSAGES"):
             # START
-            setattr(mod, "START", h.START.replace("{1}", getattr(mod, "START")))
+            setattr(mod, "START", h.START.replace("{1}", getattr(mod,
+                                                                 "START")))
             # HELP
             setattr(mod, "HELP", h.HELP.replace("{1}", getattr(mod, "HELP")))
             # REPO
@@ -58,18 +67,24 @@ def settings():
             setattr(
                 mod,
                 "ABOUT",
-                h.ABOUT
-                .replace("{1}", getattr(mod, "ABOUT"))
-                .replace("{2}", (("\n\nSource Code : [Click Here](https://github.com/unknownusernametopick/"+rep+")") if rep else ""))
+                h.ABOUT.replace("{1}", getattr(mod, "ABOUT")).replace(
+                    "{2}",
+                    (("\n\nSource Code : [Click Here](https://github.com/unknownusernametopick/"
+                      + rep + ")") if rep else ""),
+                ),
             )
         # MUST_JOIN
-        if not getattr(mod, "MUST_JOIN") and ("special" in os.getenv("MUST_JOIN", "") or os.getenv("NIGGER_BOTS", "")):
+        if not getattr(mod, "MUST_JOIN") and ("special" in os.getenv(
+                "MUST_JOIN", "") or os.getenv("NIGGER_BOTS", "")):
             setattr(mod, "MUST_JOIN", ["NiGGeR_Bots", "NiGGeR_BotsChat"])
 
         # ADDONS
         if "ADDONS" not in mod.__dict__:
             from pynigger.plugins import addons
-            plugs = [f for f in os.listdir(addons.__path__[0]) if f.endswith(".py")]
+
+            plugs = [
+                f for f in os.listdir(addons.__path__[0]) if f.endswith(".py")
+            ]
             if getattr(mod, "NO_BUTTONS"):
                 plugs.remove("buttons.py")
             rem = getattr(mod, "REMOVE_ADDONS")
@@ -77,8 +92,8 @@ def settings():
                 for p in rem:
                     if p in plugs:
                         plugs.remove(p)
-                    elif p+".py" in plugs:
-                        plugs.remove(p+".py")
+                    elif p + ".py" in plugs:
+                        plugs.remove(p + ".py")
             setattr(mod, "ADDONS", plugs)
 
         # DATABASE_TABLES
@@ -87,7 +102,8 @@ def settings():
             tables.append("bans")
 
         # CUSTOM_USERS_TABLE
-        if ("CUSTOM_USERS_TABLE" not in mod.__dict__ or not getattr(mod, "CUSTOM_USERS_TABLE")) and "users" not in tables:
+        if ("CUSTOM_USERS_TABLE" not in mod.__dict__ or not getattr(
+                mod, "CUSTOM_USERS_TABLE")) and "users" not in tables:
             tables.append("users")
         setattr(mod, "DATABASE_TABLES", tables)
 
@@ -95,7 +111,7 @@ def settings():
         setattr(mod, "CMD_PREFIXES", ["/", "!"])
 
     # Set Timezone to env so there's no circular import for logger.py
-    os.environ["TIMEZONE"] = getattr(mod, 'TIMEZONE')
+    os.environ["TIMEZONE"] = getattr(mod, "TIMEZONE")
     default = mod  # Cache
     return mod
 
@@ -111,7 +127,7 @@ class ENV:
     DB_CHAT_ID = os.environ.get("DB_CHAT_ID", "").strip()
     DATABASE_URL = os.environ.get("DATABASE_URL", "").strip()
     if DATABASE_URL:
-        if 'postgres' in DATABASE_URL and 'postgresql' not in DATABASE_URL:
+        if "postgres" in DATABASE_URL and "postgresql" not in DATABASE_URL:
             DATABASE_URL = DATABASE_URL.replace("postgres", "postgresql")
 
     def __init__(self):
@@ -131,7 +147,8 @@ class ENV:
 
         if "special" in self.OWNER_ID or getattr(module, "NIGGER_BOTS"):
             if not self.OWNER_ID or not self.OWNER_ID[0]:
-                self.OWNER_ID: list[Union[str, int]] = [1261807026]  # Personalization
+                self.OWNER_ID: list[Union[str, int]] = [1261807026
+                                                        ]  # Personalization
         if not self.OWNER_ID or not self.OWNER_ID[0]:
             self.OWNER_ID = [0]
             # logger.warn("No OWNER_ID found. Please set one. Exiting...")
@@ -146,7 +163,8 @@ class ENV:
             try:
                 self.DB_CHAT_ID = int(self.DB_CHAT_ID)
             except ValueError:
-                logger.critical("DB_CHAT_ID is not a valid integer. Exiting...")
+                logger.critical(
+                    "DB_CHAT_ID is not a valid integer. Exiting...")
                 raise SystemExit
         owners = []
         for o in self.OWNER_ID:
@@ -164,7 +182,9 @@ class ENV:
                 sudos.append(o)
         self.SUDO_USERS = sudos
 
-        if self.LOG_CHAT and ("special" in self.LOG_CHAT or os.getenv("NIGGER_BOTS", "")) and getattr(module, "NIGGER_BOTS"):
+        if (self.LOG_CHAT and
+            ("special" in self.LOG_CHAT or os.getenv("NIGGER_BOTS", ""))
+                and getattr(module, "NIGGER_BOTS")):
             self.LOG_CHAT = -1001682015859  # Nigger Bots Logs
         try:
             self.LOG_CHAT = int(self.LOG_CHAT)

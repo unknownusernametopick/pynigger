@@ -1,14 +1,13 @@
-
 from typing import Union
 from ..config import settings, ENV
 from pyrogram import filters as f
 from pyrogram.methods.decorators.on_message import OnMessage
 
-
 command_data = {"total_commands": 0, "all_commands": {}, "sudo_commands": []}
 
 
 class Command(OnMessage):
+
     @staticmethod
     def command(
         cmd: Union[str, list[str]] = None,
@@ -19,7 +18,7 @@ class Command(OnMessage):
         private_only: bool = False,
         group_only: bool = False,
         channel_only: bool = False,
-        extra_filters=None
+        extra_filters=None,
     ):
         """This decorator is used to handle messages. Mainly used to create commands. All arguments are  optional.
         You can also use the alias ``Nigger.cmd`` instead of ``Nigger.command``.
@@ -143,7 +142,7 @@ class Command(OnMessage):
             for c in cmd:
                 command_data["all_commands"][c] = description
         if sudo_only:
-            filters_ = filters_ & f.user(ENV().SUDO_USERS+ENV().OWNER_ID)
+            filters_ = filters_ & f.user(ENV().SUDO_USERS + ENV().OWNER_ID)
         elif owner_only:
             filters_ = filters_ & f.user(ENV().OWNER_ID)
         if private_only:

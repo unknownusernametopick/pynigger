@@ -1,4 +1,3 @@
-
 from ..config import ENV
 from typing import Union
 from ..logger import logger
@@ -7,6 +6,7 @@ from pyrogram.methods.decorators.on_callback_query import OnCallbackQuery
 
 
 class Callback(OnCallbackQuery):
+
     @staticmethod
     def callback(
         query: Union[str, list[str]] = None,
@@ -14,7 +14,7 @@ class Callback(OnCallbackQuery):
         owner_only: bool = False,
         sudo_only: bool = False,
         group: int = 0,
-        filters=None
+        filters=None,
     ):
         """This decorator is used to handle callback queries. All arguments are optional.
 
@@ -95,24 +95,28 @@ class Callback(OnCallbackQuery):
         # ToDo:
         #   case_sensitive argument
         if isinstance(query, list):
-            cmd_filter = f.create(lambda _, __, query_: query_.data.lower() in query)
+            cmd_filter = f.create(
+                lambda _, __, query_: query_.data.lower() in query)
         elif isinstance(query, str):
             query = query.lower()
             if not startswith:
-                cmd_filter = f.create(lambda _, __, query_: query_.data.lower() == query)
+                cmd_filter = f.create(
+                    lambda _, __, query_: query_.data.lower() == query)
             else:
-                cmd_filter = f.create(lambda _, __, query_: query_.data.lower().startswith(query))
+                cmd_filter = f.create(lambda _, __, query_: query_.data.lower(
+                ).startswith(query))
         elif not query:
             cmd_filter = None
         else:
-            logger.warn(f'Callback: query cannot be of type {type(query)} - {query}]')
+            logger.warn(
+                f"Callback: query cannot be of type {type(query)} - {query}]")
             return
         if filters:
             filters_ = cmd_filter & filters
         else:
             filters_ = cmd_filter
         if sudo_only:
-            filters_ = filters_ & f.user(ENV().SUDO_USERS+ENV().OWNER_ID)
+            filters_ = filters_ & f.user(ENV().SUDO_USERS + ENV().OWNER_ID)
         elif owner_only:
             filters_ = filters_ & f.user(ENV().OWNER_ID)
         decorator = OnCallbackQuery.on_callback_query(filters_, group)

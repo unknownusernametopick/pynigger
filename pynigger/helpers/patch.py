@@ -1,4 +1,3 @@
-
 from pynigger.logger import logger
 
 
@@ -20,7 +19,8 @@ def patch(obj):
     try:
         no_patch_list = getattr(obj, "__no_patch__")
         if not isinstance(no_patch_list, list):
-            logger.warn("__no_patch__ attribute must be a list. Skipping patch..")
+            logger.warn(
+                "__no_patch__ attribute must be a list. Skipping patch..")
             return
     except AttributeError:
         no_patch_list = []
@@ -40,7 +40,7 @@ def patch(obj):
                 continue
             if is_patchable(name):
                 old = getattr(obj, name, None)
-                setattr(obj, 'old_' + name, old)
+                setattr(obj, "old_" + name, old)
                 setattr(obj, name, attr)
         return container
 

@@ -1,11 +1,10 @@
-
 from pynigger.database.sql import Base
 from sqlalchemy import Column, BigInteger, String
 
 
 class Users(Base):
     __tablename__ = "users"
-    __table_args__ = {'extend_existing': True}
+    __table_args__ = {"extend_existing": True}
     user_id = Column(BigInteger, primary_key=True)
     lang = Column(String)
 

@@ -1,4 +1,3 @@
-
 import os
 import struct
 import asyncio
@@ -17,8 +16,13 @@ from pynigger.plugins.models.bans import Bans
 from pynigger.plugins.models.users import Users
 from pynigger.helpers.localization import l10n_setup, get_all_langs
 from pynigger.decorators.command import command_data
-from pyrogram.errors import ApiIdInvalid, AccessTokenInvalid, AuthKeyDuplicated, AuthKeyUnregistered, UserDeactivated
-
+from pyrogram.errors import (
+    ApiIdInvalid,
+    AccessTokenInvalid,
+    AuthKeyDuplicated,
+    AuthKeyUnregistered,
+    UserDeactivated,
+)
 
 __data__ = {"total_plugins": 0, "all_plugins": {}}
 __printed__ = False
@@ -35,8 +39,10 @@ class Nigger(Client, Mechanism):
     def __init__(self, **kwargs):
         global __printed__
         if not __printed__:
-            print(f'Welcome to PyNigger [v{__version__}]')
-            print('Copyright (C) 2021-2022 Nigger Bots <https://github.com/unknownusernametopick> \n')
+            print(f"Welcome to PyNigger [v{__version__}]")
+            print(
+                "Copyright (C) 2021-2022 Nigger Bots <https://github.com/unknownusernametopick> \n"
+            )
             __printed__ = True
         env = ENV()
         super().__init__(
@@ -44,7 +50,7 @@ class Nigger(Client, Mechanism):
             api_id=env.API_ID,
             api_hash=env.API_HASH,
             bot_token=env.BOT_TOKEN,
-            **kwargs
+            **kwargs,
         )
 
     def activate(self):
@@ -73,6 +79,7 @@ class Nigger(Client, Mechanism):
             if module.DATABASE_TABLES:
                 self.log("Initializing Database")
                 from pynigger.database.sql import Database
+
                 Database()  # tables need to be bound to engine
                 for i in module.DATABASE_TABLES:
                     self._load_sql_model(i)
@@ -83,7 +90,8 @@ class Nigger(Client, Mechanism):
                 self.update_bot_menu()
             else:
                 self.log("Skipping Bot Menu Update")
-            logger.info("{} is now running...".format('@' + self.get_me().username))
+            logger.info("{} is now running...".format("@" +
+                                                      self.get_me().username))
             idle()
         finally:
             if getattr(module, "SET_BOT_MENU"):
@@ -92,7 +100,9 @@ class Nigger(Client, Mechanism):
                 except ConnectionError:
                     pass
             self.stop()
-            logger.info("Bot has stopped working. For issues, visit <https://t.me/NiGGeR_BotsChat>")
+            logger.info(
+                "Bot has stopped working. For issues, visit <https://t.me/NiGGeR_BotsChat>"
+            )
 
     def run(self):
         """Alias of `Nigger.activate()`"""
@@ -107,7 +117,9 @@ class Nigger(Client, Mechanism):
         except AccessTokenInvalid:
             logger.critical("BOT_TOKEN is invalid.")
         except (AuthKeyUnregistered, AuthKeyDuplicated, struct.error):
-            logger.critical("Your STRING_SESSION is invalid. Please terminate it and generate a new one.")
+            logger.critical(
+                "Your STRING_SESSION is invalid. Please terminate it and generate a new one."
+            )
         except UserDeactivated:
             logger.critical(f"Account deleted. Time for me to rest.")
         except KeyboardInterrupt:
@@ -122,7 +134,7 @@ class Nigger(Client, Mechanism):
             Nigger.log(f"No directory named '{directory}' found")
             return
         if "/." not in directory:
-            directory = directory.replace('.', '/')
+            directory = directory.replace(".", "/")
         plugs = []
         for path, _, files in os.walk(directory):
             for name in files:
@@ -154,7 +166,7 @@ class Nigger(Client, Mechanism):
             module = module.replace(sep, ".")
             if module.endswith(".py"):
                 module = module[:-3]
-            mod = importlib.import_module(plugins+"."+module)
+            mod = importlib.import_module(plugins + "." + module)
             funcs = [func for func, _ in getmembers(mod, isfunction)]
             for func in funcs:
                 try:
@@ -241,7 +253,9 @@ class Nigger(Client, Mechanism):
         return self.data["total_plugins"]
 
     @property
-    def all_plugins(self) -> dict:  # not "plugins" to prevent clash with pyrogram's "plugins" attribute
+    def all_plugins(
+        self,
+    ) -> dict:  # not "plugins" to prevent clash with pyrogram's "plugins" attribute
         """Dictionary of all plugins and their respective absolute paths.
 
         Example:
@@ -291,18 +305,16 @@ class Nigger(Client, Mechanism):
         self.send(
             raw.functions.bots.SetBotCommands(
                 scope=raw.types.BotCommandScopeDefault(),
-                lang_code='en',
-                commands=commands
-            )
-        )
+                lang_code="en",
+                commands=commands,
+            ))
 
     def remove_bot_menu(self):
         self.send(
             raw.functions.bots.ResetBotCommands(
                 scope=raw.types.BotCommandScopeDefault(),
-                lang_code='en',
-            )
-        )
+                lang_code="en",
+            ))
 
     def _load_sql_model(self, name: str):
         tables = [Users, Bans]
@@ -311,10 +323,13 @@ class Nigger(Client, Mechanism):
                 t.__table__.create(checkfirst=True)
                 if name == "users":
                     from pynigger.database.sql import Database
+
                     db = Database()
-                    if "lang" not in asyncio.get_event_loop().run_until_complete(db.columns("users")):
+                    if "lang" not in asyncio.get_event_loop(
+                    ).run_until_complete(db.columns("users")):
                         # Temporary Way
-                        asyncio.get_event_loop().run_until_complete(db.add_column("users", "lang", "text"))
+                        asyncio.get_event_loop().run_until_complete(
+                            db.add_column("users", "lang", "text"))
                 self.log(f"Loaded Database Table: {name}")
                 break
 

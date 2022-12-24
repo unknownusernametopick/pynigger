@@ -1,6 +1,5 @@
 from pyrogram.types import InlineKeyboardButton
 
-
 START = """
 Hey {user}
 
@@ -32,15 +31,21 @@ Language : [Python](www.python.org)
 Developer : @GerProgrammer
 """
 
-HOME_BUTTON = [
-    [InlineKeyboardButton(text="🏠 Return Home 🏠", callback_data="home")]
-]
+HOME_BUTTON = [[
+    InlineKeyboardButton(text="🏠 Return Home 🏠", callback_data="home")
+]]
 
 MAIN_BUTTONS = [
-    [InlineKeyboardButton("✨ Bot Status and More Bots ✨", url="https://t.me/NiGGeR_Bots/7")],
+    [
+        InlineKeyboardButton("✨ Bot Status and More Bots ✨",
+                             url="https://t.me/NiGGeR_Bots/7")
+    ],
     [
         InlineKeyboardButton("How to Use ❔", callback_data="help"),
-        InlineKeyboardButton("🎪 About 🎪", callback_data="about")
+        InlineKeyboardButton("🎪 About 🎪", callback_data="about"),
     ],
-    [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/NiGGeR_Bots")],
+    [
+        InlineKeyboardButton("♥ More Amazing bots ♥",
+                             url="https://t.me/NiGGeR_Bots")
+    ],
 ]

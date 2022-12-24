@@ -43,12 +43,12 @@ async def to_webp(path: str) -> str:
 
         ```
     """
-    name = path.rsplit(".", 1)[0]+".webp"
+    name = path.rsplit(".", 1)[0] + ".webp"
     im = Image.open(path).convert("RGB")
     width, height = im.size
     max_pixels = 512
-    ratio = min(max_pixels/width, max_pixels/height)
-    size = (int(ratio*width), int(ratio*height))
+    ratio = min(max_pixels / width, max_pixels / height)
+    size = (int(ratio * width), int(ratio * height))
     im.resize(size)
     im.save(name, "webp")
     return name

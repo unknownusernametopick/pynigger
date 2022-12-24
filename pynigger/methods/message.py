@@ -23,11 +23,14 @@ class Message:
         if lang and text in lang:
             text = lang[text]
         try:
-            reply = await self.reply(text, quote=True, disable_web_page_preview=True, **kwargs)
+            reply = await self.reply(text,
+                                     quote=True,
+                                     disable_web_page_preview=True,
+                                     **kwargs)
         except MessageTooLong:
             reply = await self.reply("Sending as document...", quote=True)
-            file = f'{reply.message_id}.txt'
-            with open(file, 'w+', encoding="utf-8") as f:
+            file = f"{reply.message_id}.txt"
+            with open(file, "w+", encoding="utf-8") as f:
                 f.write(text)
             await reply.delete()
             reply = await self.reply_document(file, caption="Output")

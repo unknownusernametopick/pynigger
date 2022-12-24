@@ -16,7 +16,8 @@ async def ban_users(bot: Nigger, msg):
             await msg.reply("Pass an ID", quote=True)
             return
         if user_id:
-            reason = await bot.get_messages(msg.chat.id, msg.reply_to_message.message_id)
+            reason = await bot.get_messages(msg.chat.id,
+                                            msg.reply_to_message.message_id)
             try:
                 reason = reason.reply_to_message.link
             except AttributeError:
@@ -66,19 +67,21 @@ async def ban_list(bot: Nigger, msg):
     if len(banned) == 0:
         text = "No one is banned currently"
     else:
-        text = f'**Banned Users [{len(banned)}]**'
+        text = f"**Banned Users [{len(banned)}]**"
         try:
             users = await bot.get_users([i["user_id"] for i in banned])
             for user in users:
-                number = number+1
+                number = number + 1
                 user_text = f"\n\n{number}) {user.mention} [`{user.id}`]"
-                reason = [i["reason"] for i in banned if i["user_id"] == user.id]
+                reason = [
+                    i["reason"] for i in banned if i["user_id"] == user.id
+                ]
                 if reason[0]:
                     user_text += f" - Reason - {reason[0]}"
                 text += user_text
         except PeerIdInvalid:
             for i in banned:
-                number = number+1
+                number = number + 1
                 try:
                     user = await bot.get_users(i["user_id"])
                     user_text = f"\n\n{number}) {user.mention} [`{user.id}`]"

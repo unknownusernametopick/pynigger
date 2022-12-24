@@ -1,7 +1,6 @@
 # Project Configuration
 # See https://pynigger.codes/start/settings for details
 
-
 # Path of the 'plugins' directory in relation to the root directory or List of multiple paths
 # If name of your directory is 'files' and it is in the same folder as 'bot.py', pass plugin='files'.
 # Defaults to 'plugins', i.e, a folder named 'plugins' in same directory as 'bot.py'
